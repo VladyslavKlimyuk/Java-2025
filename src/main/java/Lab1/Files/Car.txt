@@ -1,0 +1,3 @@
+MAN TGA;1000
+Mercedes Actros;1500
+Volvo FH;2000
