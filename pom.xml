@@ -12,6 +12,7 @@
 
     <modules>
         <module>Web-Java</module>
+        <module>Web-Java-Hibernate</module>
     </modules>
 
     <properties>
