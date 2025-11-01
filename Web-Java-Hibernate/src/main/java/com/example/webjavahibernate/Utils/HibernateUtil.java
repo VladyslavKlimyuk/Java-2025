@@ -5,7 +5,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.example.webjavahibernate.Models.Notebook;
+import com.example.webjavahibernate.Models.*;
 
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
@@ -15,7 +15,11 @@ public class HibernateUtil {
             try {
                 Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
 
-                configuration.addAnnotatedClass(Notebook.class);
+                // configuration.addAnnotatedClass(Notebook.class);
+                configuration.addAnnotatedClass(Seller.class);
+                configuration.addAnnotatedClass(Customer.class);
+                configuration.addAnnotatedClass(Product.class);
+                configuration.addAnnotatedClass(Sale.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();
