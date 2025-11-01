@@ -15,7 +15,7 @@ public class Lab4_5_Servlet extends HttpServlet {
     private static final String manufacturer_name = "Lenovo";
     private static final String country = "Гонконг (Китай), Моррісвілл (США)";
     private static final String employee_count = "75 000+";
-    private static final String logo_url = "https://placehold.co/150x50/E4002B/FFFFFF?text=LENOVO";
+    private static final String logo_url = "/images/Lenovo.png";
     private static final String general_info = "Lenovo Group Limited — " +
             "китайська багатонаціональна технологічна компанія, що спеціалізується на розробці, " +
             "виробництві та продажі персональних комп'ютерів, планшетів, смартфонів, робочих станцій " +
@@ -24,6 +24,8 @@ public class Lab4_5_Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        String contextPath = request.getContextPath();
 
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -56,7 +58,7 @@ public class Lab4_5_Servlet extends HttpServlet {
         out.println("<body>");
 
         out.println("    <div class=\"header\">");
-        out.println("        <div class=\"logo\"><img src=\"" + logo_url + "\" " +
+        out.println("        <div class=\"logo\"><img src=\"" + contextPath + logo_url + "\" " +
                 "alt=\"Логотип Lenovo\"></div>");
         out.println("        <div class=\"nav\">");
         out.println("            <a href=\"lab4_5_servlet?page=info\">Загальна інформація</a>");
@@ -69,13 +71,13 @@ public class Lab4_5_Servlet extends HttpServlet {
 
         switch (page) {
             case "info":
-                displayGeneralInfo(out);
+                displayGeneralInfo(out, contextPath);
                 break;
             case "news":
-                displayNews(out);
+                displayNews(out, contextPath);
                 break;
             case "models":
-                displayModels(out);
+                displayModels(out, contextPath);
                 break;
             case "main":
             default:
@@ -112,7 +114,7 @@ public class Lab4_5_Servlet extends HttpServlet {
                 "будь ласка, скористайтеся навігаційним меню у верхній частині сторінки.</p>");
     }
 
-    private void displayGeneralInfo(PrintWriter out) {
+    private void displayGeneralInfo(PrintWriter out, String contextPath) {
         out.println("<p><a href=\"lab4_5_servlet?page=main\">← Повернутися на головну сторінку</a></p>");
         out.println("<h2>Загальна інформація про виробника</h2>");
         out.println("<div class=\"info-block\"><strong>Назва виробника:</strong> "
@@ -123,29 +125,29 @@ public class Lab4_5_Servlet extends HttpServlet {
         out.println("<div class=\"info-block\"><strong>Коротка інформація:</strong><p>"
                 + general_info + "</p></div>");
         out.println("<div class=\"info-block\"><strong>Логотип:</strong><br><img src=\""
-                + logo_url + "\" alt=\"Логотип Lenovo\"></div>");
+                + contextPath + logo_url + "\" alt=\"Логотип Lenovo\"></div>");
     }
 
-    private void displayNews(PrintWriter out) {
+    private void displayNews(PrintWriter out, String contextPath) {
         out.println("<p><a href=\"lab4_5_servlet?page=main\">← Повернутися на головну сторінку</a></p>");
         out.println("<h2>Останні новини Lenovo</h2>");
 
         String[][] news = {
                 {"Lenovo представляє нові ThinkPad X1", "Флагманська серія ThinkPad отримала оновлення " +
                         "з процесорами Intel Core Ultra та покращеною автономністю.",
-                        "https://placehold.co/200x120/190C1B/FFFFFF?text=X1+News"},
+                        contextPath + "/images/ThinkPad X1 Carbon Gen 12.jpg"},
                 {"Анонс ігрової серії Legion", "Презентація ноутбуків Legion Pro з дисплеями Mini-LED " +
                         "та найновішими графічними адаптерами NVIDIA.",
-                        "https://placehold.co/200x120/556B2F/FFFFFF?text=Legion+News"},
+                        contextPath + "/images/Legion Pro 7i.jpg"},
                 {"Запуск Yoga Book 9i Gen 2", "Друге покоління інноваційного ноутбука з двома " +
                         "OLED-екранами для максимальної багатозадачності.",
-                        "https://placehold.co/200x120/800080/FFFFFF?text=Yoga+News"}
+                        contextPath + "/images/Yoga Book 9i Gen 2.jpg"}
         };
 
         for (String[] item : news) {
             out.println("<div class=\"card\">");
             out.println("    <img src=\"" + item[2] + "\" onerror=\"this.onerror=null;" +
-                    "this.src='https://placehold.co/200x120?text=NO+IMAGE'\" alt=\"Фото новини\">");
+                    "this.src='" + contextPath + "/images/NO_IMAGE.png'\" alt=\"Фото новини\">");
             out.println("    <div>");
             out.println("        <h3>" + item[0] + "</h3>");
             out.println("        <p>" + item[1] + "</p>");
@@ -154,26 +156,26 @@ public class Lab4_5_Servlet extends HttpServlet {
         }
     }
 
-    private void displayModels(PrintWriter out) {
+    private void displayModels(PrintWriter out, String contextPath) {
         out.println("<p><a href=\"lab4_5_servlet?page=main\">← Повернутися на головну сторінку</a></p>");
         out.println("<h2>Популярні моделі ноутбуків Lenovo</h2>");
 
         String[][] models = {
                 {"ThinkPad X1 Carbon Gen 12", "Преміальний бізнес-ноутбук. Надлегкий корпус, " +
                         "висока надійність і безпека. Ідеальний для корпоративного використання.",
-                        "https://placehold.co/200x120/000000/FFFFFF?text=ThinkPad"},
+                        contextPath + "/images/ThinkPad X1 Carbon Gen 12.jpg"},
                 {"IdeaPad Slim 5", "Універсальний ноутбук для повсякденних завдань, навчання та " +
                         "домашнього використання. Гарне співвідношення ціни та якості.",
-                        "https://placehold.co/200x120/A9A9A9/FFFFFF?text=IdeaPad"},
+                        contextPath + "/images/IdeaPad Slim 5.jpg"},
                 {"Legion Pro 7i", "Потужна ігрова станція з передовими системами охолодження та " +
                         "високопродуктивними компонентами для геймерів.",
-                        "https://placehold.co/200x120/E4002B/FFFFFF?text=Legion"}
+                        contextPath + "/images/Legion Pro 7i.jpg"}
         };
 
         for (String[] item : models) {
             out.println("<div class=\"card\">");
             out.println("    <img src=\"" + item[2] + "\" onerror=\"this.onerror=null;" +
-                    "this.src='https://placehold.co/200x120?text=NO+IMAGE'\" alt=\"Фото моделі\">");
+                    "this.src='" + contextPath + "/images/NO_IMAGE.png'\" alt=\"Фото моделі\">");
             out.println("    <div>");
             out.println("        <h3>" + item[0] + "</h3>");
             out.println("        <p>" + item[1] + "</p>");

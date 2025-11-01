@@ -2,11 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Лабораторна робота №5</title>
+  <title>Web-Java-Hibernate</title>
 </head>
 <body>
-<h1><%= "Лабораторна робота №5" %></h1>
+<h1><%= "Web-Java-Hibernate" %></h1>
 <br/>
-<a href="notebook">Блокнот</a>
+<ul>
+    <li><a href="notebook">Блокнот</a></li>
+    <li><a href="sale">Продажі</a></li>
+</ul>
 </body>
 </html>
