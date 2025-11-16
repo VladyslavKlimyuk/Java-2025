@@ -1,0 +1,715 @@
+GET http://localhost:8080/api/books/search/description?keyword=цензуру
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140649.200.json
+
+###
+
+GET http://localhost:8080/api/books/search/bestsellers
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140648-1.200.json
+
+###
+
+GET http://localhost:8080/api/books/search/complex?genre=Антиутопія&author=Рей Бредбері&year=1953
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140648.200.json
+
+###
+
+GET http://localhost:8080/api/books/search/year?value=1953
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140647.200.json
+
+###
+
+GET http://localhost:8080/api/books/search/publisher-current-year?publisher=Ей-Ес-Ді
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140646-4.200.json
+
+###
+
+GET http://localhost:8080/api/books/search/latest-by-author?author=Рей Бредбері
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140646-3.200.json
+
+###
+
+GET http://localhost:8080/api/books/search/pages?value=420
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140646-2.200.json
+
+###
+
+GET http://localhost:8080/api/books/search/author?value=Бредбері
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140646-1.200.json
+
+###
+
+GET http://localhost:8080/api/books/search/title?value=Марсіанські
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140646.200.json
+
+###
+
+GET http://localhost:8080/api/books/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-11-16T140419.200.json
+
+###
+
+PUT http://localhost:8080/api/books/1
+Content-Type: application/json
+Content-Length: 365
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 1,
+  "title": "Дюна: Нове видання",
+  "author": "Френк Герберт",
+  "publicationYear": 1965,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 544,
+  "description": "Класичний роман про пустельну планету Арракіс.",
+  "circulation": 1000000
+}
+
+<> 2025-11-16T140345.200.json
+
+###
+
+DELETE http://localhost:8080/api/books/5
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 357
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Управління проєктами",
+  "author": "Іван Іванов",
+  "publicationYear": 2025,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Навчальна література",
+  "pageCount": 400,
+  "description": "Книга про сучасні методи управління проєктами.",
+  "circulation": 1000
+}
+
+<> 2025-11-16T134128-4.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 356
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Хто викрав мій сир?",
+  "author": "Спенсер Джонсон",
+  "publicationYear": 1998,
+  "publisher": "У-Ай-Бі",
+  "genre": "Саморозвиток",
+  "pageCount": 96,
+  "description": "Проста притча про необхідність змін у житті та роботі.",
+  "circulation": 50000
+}
+
+<> 2025-11-16T134128-3.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 334
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Марсіанські хроніки",
+  "author": "Рей Бредбері",
+  "publicationYear": 1950,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 420,
+  "description": "Збірка новел про колонізацію Марса.",
+  "circulation": 150000
+}
+
+<> 2025-11-16T134128-2.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 318
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "451° за Фаренгейтом",
+  "author": "Рей Бредбері",
+  "publicationYear": 1953,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Антиутопія",
+  "pageCount": 256,
+  "description": "Книга про спалювання книг та цензуру.",
+  "circulation": 200000
+}
+
+<> 2025-11-16T134128-1.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 343
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Дюна. Книга 1",
+  "author": "Френк Герберт",
+  "publicationYear": 1965,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 544,
+  "description": "Класичний роман про пустельну планету Арракіс.",
+  "circulation": 1000000
+}
+
+<> 2025-11-16T134128.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 357
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Управління проєктами",
+  "author": "Іван Іванов",
+  "publicationYear": 2025,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Навчальна література",
+  "pageCount": 400,
+  "description": "Книга про сучасні методи управління проєктами.",
+  "circulation": 1000
+}
+
+<> 2025-11-16T133339-1.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 356
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Хто викрав мій сир?",
+  "author": "Спенсер Джонсон",
+  "publicationYear": 1998,
+  "publisher": "У-Ай-Бі",
+  "genre": "Саморозвиток",
+  "pageCount": 96,
+  "description": "Проста притча про необхідність змін у житті та роботі.",
+  "circulation": 50000
+}
+
+<> 2025-11-16T133339.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 334
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Марсіанські хроніки",
+  "author": "Рей Бредбері",
+  "publicationYear": 1950,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 420,
+  "description": "Збірка новел про колонізацію Марса.",
+  "circulation": 150000
+}
+
+<> 2025-11-16T133338-2.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 318
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "451° за Фаренгейтом",
+  "author": "Рей Бредбері",
+  "publicationYear": 1953,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Антиутопія",
+  "pageCount": 256,
+  "description": "Книга про спалювання книг та цензуру.",
+  "circulation": 200000
+}
+
+<> 2025-11-16T133338-1.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 343
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Дюна. Книга 1",
+  "author": "Френк Герберт",
+  "publicationYear": 1965,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 544,
+  "description": "Класичний роман про пустельну планету Арракіс.",
+  "circulation": 1000000
+}
+
+<> 2025-11-16T133338.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 357
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Управління проєктами",
+  "author": "Іван Іванов",
+  "publicationYear": 2025,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Навчальна література",
+  "pageCount": 400,
+  "description": "Книга про сучасні методи управління проєктами.",
+  "circulation": 1000
+}
+
+<> 2025-11-16T133241-1.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 356
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Хто викрав мій сир?",
+  "author": "Спенсер Джонсон",
+  "publicationYear": 1998,
+  "publisher": "У-Ай-Бі",
+  "genre": "Саморозвиток",
+  "pageCount": 96,
+  "description": "Проста притча про необхідність змін у житті та роботі.",
+  "circulation": 50000
+}
+
+<> 2025-11-16T133241.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 334
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Марсіанські хроніки",
+  "author": "Рей Бредбері",
+  "publicationYear": 1950,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 420,
+  "description": "Збірка новел про колонізацію Марса.",
+  "circulation": 150000
+}
+
+<> 2025-11-16T133240-2.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 318
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "451° за Фаренгейтом",
+  "author": "Рей Бредбері",
+  "publicationYear": 1953,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Антиутопія",
+  "pageCount": 256,
+  "description": "Книга про спалювання книг та цензуру.",
+  "circulation": 200000
+}
+
+<> 2025-11-16T133240-1.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 343
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Дюна. Книга 1",
+  "author": "Френк Герберт",
+  "publicationYear": 1965,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 544,
+  "description": "Класичний роман про пустельну планету Арракіс.",
+  "circulation": 1000000
+}
+
+<> 2025-11-16T133240.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 357
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Управління проєктами",
+  "author": "Іван Іванов",
+  "publicationYear": 2025,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Навчальна література",
+  "pageCount": 400,
+  "description": "Книга про сучасні методи управління проєктами.",
+  "circulation": 1000
+}
+
+<> 2025-11-16T132955-3.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 356
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Хто викрав мій сир?",
+  "author": "Спенсер Джонсон",
+  "publicationYear": 1998,
+  "publisher": "У-Ай-Бі",
+  "genre": "Саморозвиток",
+  "pageCount": 96,
+  "description": "Проста притча про необхідність змін у житті та роботі.",
+  "circulation": 50000
+}
+
+<> 2025-11-16T132955-2.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 334
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Марсіанські хроніки",
+  "author": "Рей Бредбері",
+  "publicationYear": 1950,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 420,
+  "description": "Збірка новел про колонізацію Марса.",
+  "circulation": 150000
+}
+
+<> 2025-11-16T132955-1.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 318
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "451° за Фаренгейтом",
+  "author": "Рей Бредбері",
+  "publicationYear": 1953,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Антиутопія",
+  "pageCount": 256,
+  "description": "Книга про спалювання книг та цензуру.",
+  "circulation": 200000
+}
+
+<> 2025-11-16T132955.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 343
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Дюна. Книга 1",
+  "author": "Френк Герберт",
+  "publicationYear": 1965,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 544,
+  "description": "Класичний роман про пустельну планету Арракіс.",
+  "circulation": 1000000
+}
+
+<> 2025-11-16T132954.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 357
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Управління проєктами",
+  "author": "Іван Іванов",
+  "publicationYear": 2025,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Навчальна література",
+  "pageCount": 400,
+  "description": "Книга про сучасні методи управління проєктами.",
+  "circulation": 1000
+}
+
+<> 2025-11-16T132317.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 356
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Хто викрав мій сир?",
+  "author": "Спенсер Джонсон",
+  "publicationYear": 1998,
+  "publisher": "У-Ай-Бі",
+  "genre": "Саморозвиток",
+  "pageCount": 96,
+  "description": "Проста притча про необхідність змін у житті та роботі.",
+  "circulation": 50000
+}
+
+<> 2025-11-16T132316-2.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 334
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Марсіанські хроніки",
+  "author": "Рей Бредбері",
+  "publicationYear": 1950,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 420,
+  "description": "Збірка новел про колонізацію Марса.",
+  "circulation": 150000
+}
+
+<> 2025-11-16T132316-1.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 318
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "451° за Фаренгейтом",
+  "author": "Рей Бредбері",
+  "publicationYear": 1953,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Антиутопія",
+  "pageCount": 256,
+  "description": "Книга про спалювання книг та цензуру.",
+  "circulation": 200000
+}
+
+<> 2025-11-16T132316.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 343
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "Дюна. Книга 1",
+  "author": "Френк Герберт",
+  "publicationYear": 1965,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Наукова фантастика",
+  "pageCount": 544,
+  "description": "Класичний роман про пустельну планету Арракіс.",
+  "circulation": 1000000
+}
+
+<> 2025-11-16T132315.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 318
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "451° за Фаренгейтом",
+  "author": "Рей Бредбері",
+  "publicationYear": 1953,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Антиутопія",
+  "pageCount": 256,
+  "description": "Книга про спалювання книг та цензуру.",
+  "circulation": 200000
+}
+
+<> 2025-11-16T131517.201.json
+
+###
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+Content-Length: 318
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "title": "451° за Фаренгейтом",
+  "author": "Рей Бредбері",
+  "publicationYear": 1953,
+  "publisher": "Ей-Ес-Ді",
+  "genre": "Антиутопія",
+  "pageCount": 256,
+  "description": "Книга про спалювання книг та цензуру.",
+  "circulation": 200000
+}
+
+<> 2025-11-16T131159.201.json
+
+###
+
