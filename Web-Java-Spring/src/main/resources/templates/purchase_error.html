@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Помилка купівлі</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        .error { color: red; border: 1px solid red; padding: 15px; background-color: #fff0f0; }
+    </style>
+</head>
+<body>
+<div class="error">
+    <h1>Помилка купівлі!</h1>
+    <p>Не вдалося оформити квиток через наступну проблему:</p>
+
+    <h3 th:if="${error}" th:text="${error}">Помилка: квиток вже проданий або не знайдено!</h3>
+    <div th:unless="${error}">
+        <p>Виникла невідома помилка на сервері.</p>
+    </div>
+</div>
+
+<p><a href="/">Спробувати знову</a></p>
+</body>
+</html>

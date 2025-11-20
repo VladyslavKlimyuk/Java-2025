@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Створити подію та квитки</title>
+</head>
+<body>
+<h1>Створення події</h1>
+
+<form th:action="@{/api/events/create}" th:object="${eventCreationDTO}" method="post">
+
+    <fieldset>
+        <legend>Дані події</legend>
+        <label for="name">Назва події:</label>
+        <input type="text" id="name" th:field="*{name}" required><br><br>
+
+        <label for="eventDate">Дата/Час (YYYY-MM-DDThh:mm):</label>
+        <input type="datetime-local" id="eventDate" th:field="*{eventDate}" required><br><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Місце проведення</legend>
+        <label for="placeName">Назва Місця:</label>
+        <input type="text" id="placeName" th:field="*{place.name}" required><br><br>
+
+        <label for="placeAddress">Адреса:</label>
+        <input type="text" id="placeAddress" th:field="*{place.address}" required><br><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Пачки квитків (ціна та кількість)</legend>
+
+        <div th:each="pack, stat : *{ticketPacks}">
+            <h4>Пакет #<span th:text="${stat.count}"></span></h4>
+            <label>Ціна (X):</label>
+            <input type="number" th:field="*{ticketPacks[__${stat.index}__].cost}" required step="0.01">
+
+            <label>Кількість (N):</label>
+            <input type="number" th:field="*{ticketPacks[__${stat.index}__].count}" required min="1">
+        </div>
+    </fieldset>
+
+    <button type="submit">Створити подію</button>
+</form>
+
+<p><a href="/">На головну</a></p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Онлайн-купівля квитків</title>
+    <style>
+        .button-link {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 5px 10px 15px 0;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Майбутні події</h1>
+
+<div>
+    <a th:href="@{/api/events/create}" class="button-link">Створити нову подію</a>
+    <a th:href="@{/api/events/customers/create}" class="button-link">Реєстрація користувача</a>
+</div>
+
+<hr>
+
+<h2>Пошук вільних квитків</h2>
+<form th:action="@{/api/events/search}" method="get">
+    <label>
+        <input type="text" name="eventName" th:value="${searchQuery}" placeholder="Введіть назву події" required>
+    </label>
+    <button type="submit">Знайти квитки</button>
+</form>
+
+<hr>
+</body>
+</html>

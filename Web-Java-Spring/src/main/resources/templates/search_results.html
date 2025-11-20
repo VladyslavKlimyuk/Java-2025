@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Квитки на ' + ${searchQuery}"></title>
+</head>
+<body>
+<h1 th:text="'Вільні квитки на подію: ' + ${searchQuery}"></h1>
+
+<div th:if="${#lists.isEmpty(freeTickets)}">
+    <p>На жаль, вільних квитків не знайдено.</p>
+</div>
+
+<div th:unless="${#lists.isEmpty(freeTickets)}">
+    <h3 th:text="'Знайдено ' + ${freeTickets.size()} + ' вільних квитків:'"></h3>
+    <table>
+        <thead>
+        <tr>
+            <th>ID квитка</th>
+            <th>Ціна</th>
+            <th>Номер місця</th>
+            <th>Дія</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ticket : ${freeTickets}">
+            <td th:text="${ticket.id}">101</td>
+            <td th:text="${#numbers.formatCurrency(ticket.cost)}">500.00 UAH</td>
+            <td th:text="${ticket.number}">S-A10</td>
+            <td>
+                <a th:href="@{/api/events/buy/{id}(id=${ticket.id})}">Купити</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<p><a th:href="@{/api/events}">Повернутися на головну</a></p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Купівля успішна!</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        .success { color: green; border: 1px solid green; padding: 15px; background-color: #e6ffe6; }
+        .details { margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; }
+    </style>
+</head>
+<body>
+<div class="success">
+    <h1>Купівля успішна!</h1>
+    <p>Ваш квиток успішно зарезервовано та оформлено. Дякуємо за покупку!</p>
+</div>
+
+<div th:if="${ticket}" class="details">
+    <h2>Деталі квитка:</h2>
+    <ul>
+        <li><strong>Номер квитка:</strong> <span th:text="${ticket.id}">105</span></li>
+        <li><strong>Подія:</strong> <span th:text="${ticket.event.name}">Концерт "Рок-Легенди"</span></li>
+        <li><strong>Місце:</strong> <span th:text="${ticket.number}">S-A10</span></li>
+        <li><strong>Ціна:</strong> <span th:text="${#numbers.formatCurrency(ticket.cost)}">500.00 UAH</span></li>
+        <li><strong>Статус:</strong> <span th:text="${ticket.status}">SOLD</span></li>
+    </ul>
+
+    <h2>Дані покупця:</h2>
+    <div th:if="${ticket.customer}">
+        <ul>
+            <li><strong>Ім'я:</strong> <span th:text="${ticket.customer.name}">Іван Іванов</span></li>
+            <li><strong>Email:</strong> <span th:text="${ticket.customer.email}">ivanov@mail.com</span></li>
+        </ul>
+    </div>
+</div>
+
+<p><a href="/">Повернутися на головну</a></p>
+</body>
+</html>
