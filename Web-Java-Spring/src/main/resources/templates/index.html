@@ -15,6 +15,9 @@
             border: none;
             cursor: pointer;
         }
+        .button-link.login {
+            background-color: #28a745;
+        }
         .button-link:hover {
             background-color: #0056b3;
         }
@@ -25,7 +28,8 @@
 
 <div>
     <a th:href="@{/api/events/create}" class="button-link">Створити нову подію</a>
-    <a th:href="@{/api/events/customers/create}" class="button-link">Реєстрація користувача</a>
+    <a th:href="@{/api/register}" class="button-link">Реєстрація користувача</a>
+    <a th:href="@{/api/events/login}" class="button-link login">Увійти</a>
 </div>
 
 <hr>

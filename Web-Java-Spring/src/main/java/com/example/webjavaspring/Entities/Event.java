@@ -18,7 +18,7 @@ public class Event {
 
     private String name;
 
-    private LocalDateTime eventDate; // event_date
+    private LocalDateTime eventDate;
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Ticket> tickets;

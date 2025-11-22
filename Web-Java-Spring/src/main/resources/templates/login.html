@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід</title>
+</head>
+<body>
+<h1>Вхід в систему</h1>
+
+<div th:if="${param.error}">
+    <p style="color: red;">Невірний логін або пароль.</p>
+</div>
+
+<form th:action="@{/api/events/login}" method="post">
+    <label for="username">Email (Логін):</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Увійти</button>
+</form>
+
+<p>Немає акаунту? <a th:href="@{/api/register}">Зареєструватися</a></p>
+</body>
+</html>

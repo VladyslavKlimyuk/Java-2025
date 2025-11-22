@@ -4,12 +4,15 @@ import com.example.webjavaspring.Entities.*;
 import com.example.webjavaspring.Repositories.*;
 import com.example.webjavaspring.DTOs.*;
 import com.example.webjavaspring.Enums.TicketStatus;
+import com.example.webjavaspring.Enums.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +22,7 @@ public class EventService {
     private final IPlaceRepository placeRepository;
     private final ITicketRepository ticketRepository;
     private final ICustomerRepository customerRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     public Event createEvent(EventCreationDTO dto) {
@@ -57,20 +61,30 @@ public class EventService {
 
     @Transactional
     public Customer createCustomer(CustomerDTO dto) {
-        return customerRepository.findByEmail(dto.getEmail())
-                .orElseGet(() -> customerRepository.save(Customer.builder()
-                        .name(dto.getName())
-                        .email(dto.getEmail())
-                        .phone(dto.getPhone())
-                        .build()));
+//        if (customerRepository.findByEmail(dto.getEmail()).isPresent()) {
+//            throw new RuntimeException("Користувач з таким email вже зареєстрований.");
+//        }
+
+        return customerRepository.save(Customer.builder()
+                .name(dto.getName())
+                .email(dto.getEmail())
+                .phone(dto.getPhone())
+                .password(passwordEncoder.encode(dto.getPassword()))
+                .role(Role.USER)
+                .build());
     }
+
+    public Optional<Customer> findCustomerByEmail(String email) {
+        return customerRepository.findByEmail(email);
+    }
+
 
     public List<Ticket> findFreeTicketsByEvent(String eventName) {
         return ticketRepository.findFreeTicketsByEventName(eventName);
     }
 
     public List<Event> findUpcomingEvents() {
-        return eventRepository.findAll();
+        return eventRepository.findAllByEventDateAfterOrderByEventDateAsc(LocalDateTime.now());
     }
 
     @Transactional

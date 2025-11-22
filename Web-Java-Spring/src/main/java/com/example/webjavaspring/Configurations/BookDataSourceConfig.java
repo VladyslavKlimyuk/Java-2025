@@ -45,7 +45,7 @@
 //        @SuppressWarnings("unchecked")
 //        Map<String, Object> vendorProperties = (Map<String, Object>) (Map<?, ?>) jpaProperties.getProperties();
 //
-//        vendorProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect"); // Явне встановлення діалекту
+//        vendorProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 //
 //        return builder
 //                .dataSource(dataSource)
