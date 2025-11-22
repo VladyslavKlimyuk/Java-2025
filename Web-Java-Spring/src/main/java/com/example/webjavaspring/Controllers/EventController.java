@@ -26,6 +26,9 @@ public class EventController {
 
     @GetMapping("/search")
     public String searchTickets(@RequestParam(name = "eventName", required = false) String eventName, Model model) {
+        if (eventName == null) {
+            eventName = "";
+        }
         List<Ticket> freeTickets = eventService.findFreeTicketsByEvent(eventName);
 
         model.addAttribute("freeTickets", freeTickets);
@@ -69,27 +72,15 @@ public class EventController {
     public String processEventCreation(@ModelAttribute EventCreationDTO dto, Model model) {
         try {
             eventService.createEvent(dto);
-            return "redirect:/";
+            return "redirect:/api/events";
         } catch (Exception e) {
             model.addAttribute("error", "Помилка створення події: " + e.getMessage());
             return "purchase_error";
         }
     }
 
-    @GetMapping("/customers/create")
-    public String showCustomerCreateForm(Model model) {
-        model.addAttribute("customerDTO", new CustomerDTO());
-        return "customer_create";
-    }
-
-    @PostMapping("/customers/create")
-    public String processCustomerCreation(@ModelAttribute CustomerDTO dto, Model model) {
-        try {
-            eventService.createCustomer(dto);
-            return "redirect:/api/events";
-        } catch (Exception e) {
-            model.addAttribute("error", "Помилка реєстрації: " + e.getMessage());
-            return "purchase_error";
-        }
+    @GetMapping("/login")
+    public String showLoginForm() {
+        return "login";
     }
 }
